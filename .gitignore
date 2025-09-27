@@ -1,5 +1,7 @@
 .venv
-index_files
-Deber1_PaperRW.pptx
-.quarto
+index_files/
+.quarto/
 _site/
+/.quarto/
+eda.qmd
+**/*.quarto_ipynb
