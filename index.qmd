@@ -1,0 +1,49 @@
+---
+title: "PRIMER REPORTE EN QUARTO"
+author: "Ruben Basantes"
+date: "2025-09-25"
+format: "html"
+---
+# Titulo 1
+## Subtilulo 2
+
+```{python}
+import altair as alt
+from vega_datasets import data
+cars = data.cars()
+print(cars.head())
+#for i in range (10):
+#    print(f"elemento {i}")
+```
+## Visualizacion en Altair
+```{python}
+alt.Chart(cars).mark_point().encode(
+    x='Miles_per_Gallon'
+)
+```
+
+## Visualizacion scatterplot
+```{python}
+alt.Chart(cars).mark_point().encode(
+    x='Miles_per_Gallon',
+    y='Horsepower',
+    tooltip=["Name", "Origin", "Miles_per_Gallon", "Horsepower"]    # etiquetas que se veran al pasar el cursor
+).interactive() # interactivo de zoom
+```
+
+## Visualizacion scatterplot con color
+
+```{python}
+alt.Chart(cars).mark_point().encode(
+    x='Miles_per_Gallon',
+    y='Horsepower',
+    color='Origin'
+    tooltip=["Name", "Origin", "Miles_per_Gallon", "Horsepower"]    # etiquetas que se veran al pasar el cursor
+).interactive() # interactivo de zoom
+```
+
+### Subtilulo 3
+
+- listas
+  - elemento 1
+  - elemento 2
